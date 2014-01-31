@@ -20,6 +20,6 @@ I'm using [libsass](https://github.com/hcatlin/libsass) and [node-sass](https://
 
 ### Sass 3.3
 
-I wanted to be able to use fancy Sass 3.3 list functions. So now just append `-33` to your `eulerXXX` filenames and use the `make sass33` command to run them.
+I wanted to be able to use fancy Sass 3.3 list functions. So now just append `-33` to your `eulerXXX` filenames and use the `make sass33` command to run them.  Sass 3.3 version files should exist in the same `sass` directory as the LibSass files.
 
 ```$ make sass33 001```
