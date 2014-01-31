@@ -26,7 +26,6 @@ answer:
 sass:
 	@printf $(MESSAGE) "Sass" $(NUM)
 	@node-sass "sass/euler$(NUM).scss" "sass/out/euler$(NUM).css" --stdout
-	# Requires libsass and node-sass
 
 %:
 	@: # phony rule to quiet warning about no rule for 'number' argument
