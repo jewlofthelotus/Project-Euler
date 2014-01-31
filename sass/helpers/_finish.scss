@@ -1,2 +1,3 @@
 @include answer($answer);
 @include attempt($attempt);
+@include result($answer, $attempt);

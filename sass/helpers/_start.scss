@@ -1,5 +1,5 @@
-$attempt: 0;
-$answer: 0;
+$attempt: null;
+$answer: null;
 
 @mixin attempt($val) {
   attempt: $val;
@@ -7,4 +7,12 @@ $answer: 0;
 
 @mixin answer($val) {
   answer: $val;
+}
+
+@mixin result($answer, $attempt) {
+  @if $answer == $attempt {
+    RESULT: CORRECT;
+  } @else {
+    RESULT: Try again;
+  }
 }
