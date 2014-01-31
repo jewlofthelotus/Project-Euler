@@ -1,0 +1,30 @@
+@import "helpers/start";
+
+
+/**
+ * Problem: Find the sum of all numbers that are multiples
+ * of 3 or 5 from 1 to 999
+ */
+
+$answer: 233168;
+
+
+@function sumMultiplesOf($x) {
+  $sum: 0;
+  $num: 1;
+
+  @while $num <= 999 {
+    @if ($num % $x == 0) {
+      $sum: $sum+$num;
+    }
+    $num: $num+1;
+  }
+
+  @return $sum;
+}
+
+
+$attempt: sumMultiplesOf(3) + sumMultiplesOf(5) - sumMultiplesOf(15);
+
+
+@import "helpers/finish";

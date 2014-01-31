@@ -1,0 +1,10 @@
+$attempt: 0;
+$answer: 0;
+
+@mixin attempt($val) {
+  attempt: $val;
+}
+
+@mixin answer($val) {
+  answer: $val;
+}
