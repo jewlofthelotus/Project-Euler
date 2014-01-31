@@ -37,8 +37,5 @@ $startSum: 2;
 
 $attempt: fib(1, 2, $startSum);
 
-$test: 1 2 3 4 5 6 7 8 9 10;
-$test2: 1 2 3 4 5 6 7 8 9 10;
-$attempt: length($test);
 
 @import "helpers/finish";
