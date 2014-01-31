@@ -12,8 +12,12 @@ $fib: 0 1;
 $sum: 0;
 
 @while nth($fib, 2) < 4000000 {
-  $fib: append($fib, nth($fib, 1) + nth($fib, 2));
-  $fib: set_nth($fib, 1, "");
+  $fib: append($fib, nth($fib, 1) + nth($fib, 2));  // add next number
+  $fib: set_nth($fib, 1, null);                     //
+
+  @warn nth($fib, 1);
+
+  // Totally not working yet.
   $sum: $sum + if((nth($fib, 1) % 2 == 0), nth($fib, 1), 0);
 }
 
