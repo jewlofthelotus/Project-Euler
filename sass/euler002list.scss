@@ -1,0 +1,23 @@
+@import "helpers/start";
+
+
+/**
+ * Problem: Find the sum of all even-valued Fibonacci terms not in excess of four million.
+ */
+
+$answer: 4613732;
+
+
+$fib: 0 1;
+$sum: 0;
+
+@while nth($fib, 2) < 4000000 {
+  $fib: append($fib, nth($fib, 1) + nth($fib, 2));
+  $fib: set_nth($fib, 1, "");
+  $sum: $sum + if((nth($fib, 1) % 2 == 0), nth($fib, 1), 0);
+}
+
+
+$attempt: $sum;
+
+@import "helpers/finish";

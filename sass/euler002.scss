@@ -2,16 +2,43 @@
 
 
 /**
- * Problem: Description
+ * Problem: Find the sum of all even-valued Fibonacci terms not in excess of four million.
  */
 
-$answer: 0;
+$answer: 4613732;
 
 
-// Do your maths here
+@function fib($prev1, $prev2, $sum) {
+  $cur: $prev1 + $prev2;
 
+  @if $cur <= 4000000 {
+    @if $cur % 2 == 0 {
+      $sum: $sum+$cur;
+    }
 
-$attempt: 0;
+    @return fib($prev2, $cur, $sum);
 
+  } @else {
+    @return $sum;
+  }
+}
+
+// Solution: Recursively get (and sum even) fib vals <= 4mil
+//   For each val:
+//     if <= 4mil
+//       if even, add to sum
+//       move to next val
+//         if even, add to sum
+//         returns next val OR sum if next val > 4mil)
+
+$startSum: 2;
+// Since Fib.seq. starts with 1, starting by adding 1+2 would leave 2 out of the sum
+// Could start with fib(0, 1, 0), but 0 technically isn't in the Fib.seq.
+
+$attempt: fib(1, 2, $startSum);
+
+$test: 1 2 3 4 5 6 7 8 9 10;
+$test2: 1 2 3 4 5 6 7 8 9 10;
+$attempt: length($test);
 
 @import "helpers/finish";

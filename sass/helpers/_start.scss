@@ -1,16 +1,16 @@
-$attempt: null;
 $answer: null;
-
-@mixin attempt($val) {
-  attempt: $val;
-}
+$attempt: null;
 
 @mixin answer($val) {
   answer: $val;
 }
 
-@mixin result($answer, $attempt) {
-  @if $answer == $attempt {
+@mixin attempt($val) {
+  attempt: $val;
+}
+
+@mixin result($val1, $val2) {
+  @if $val1 == $val2 {
     RESULT: CORRECT;
   } @else {
     RESULT: Try again;

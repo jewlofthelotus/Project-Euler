@@ -25,7 +25,7 @@ answer:
 
 sass:
 	@printf $(MESSAGE) "Sass" $(NUM)
-	@node-sass "sass/euler$(NUM).scss" "sass/out/euler$(NUM).css" --stdout
+	@time node-sass sass/euler$(NUM).scss sass/out/euler$(NUM).css --stdout
 
 %:
 	@: # phony rule to quiet warning about no rule for 'number' argument

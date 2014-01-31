@@ -8,11 +8,13 @@
 $answer: 233168;
 
 
+$max: 1000;
+
 @function sumMultiplesOf($x) {
   $sum: 0;
   $num: 1;
 
-  @while $num < 1000 {
+  @while $num < $max {
     @if $num % $x == 0 {
       $sum: $sum+$num;
     }
